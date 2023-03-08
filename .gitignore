@@ -16,6 +16,7 @@ MANIFEST
 *.egg-info
 *.whl
 build/
+dist/
 
 # Unit test / coverage reports
 .tox/

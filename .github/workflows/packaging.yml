@@ -116,26 +116,25 @@ jobs:
         with:
           path: ./wheels/*.whl
 
-  # publish:
-  #   name: Publish package
-  #   if: startsWith(github.event.ref, 'refs/tags/v')
-  #   needs:
-  #     - format
-  #     - lint
-  #     - typecheck
-  #     - test
-  #     - build_source_dist
-  #     - build_wheels
-  #   runs-on: ubuntu-latest
+  publish:
+    name: Publish package
+    if: startsWith(github.event.ref, 'refs/tags/v')
+    needs:
+      - format
+      - lint
+      - typecheck
+      - test
+      - build_source_dist
+      - build_wheels
+    runs-on: ubuntu-latest
 
-  #   steps:
-  #     - uses: actions/download-artifact@v3
-  #       with:
-  #         name: artifact
-  #         path: ./ch07/first-python-package/dist # Update to match root of package
+    steps:
+      - uses: actions/download-artifact@v3
+        with:
+          name: artifact
+          path: ./dist
 
-  #     - uses: pypa/gh-action-pypi-publish@v1.5.0
-  #       with:
-  #         user: __token__
-  #         password: ${{ secrets.PYPI_API_TOKEN }}
-  #         packages_dir: ./ch07/first-python-package/dist/ # You don't need this in your package
+      - uses: pypa/gh-action-pypi-publish@v1.5.0
+        with:
+          user: __token__
+          password: ${{ secrets.PYPI_API_TOKEN }}

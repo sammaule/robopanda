@@ -116,7 +116,8 @@ jobs:
         run: python -m cibuildwheel --output-dir wheels
 
       - uses: actions/upload-artifact@v3
-        with:
+         with:
+          path: ./*.whl
 
   # publish:
   #   name: Publish package
@@ -140,3 +141,4 @@ jobs:
   #       with:
   #         user: __token__
   #         password: ${{ secrets.PYPI_API_TOKEN }}
+  #         packages_dir: ./ch07/first-python-package/dist/ # You don't need this in your package

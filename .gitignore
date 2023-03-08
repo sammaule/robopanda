@@ -1,0 +1,20 @@
+# Byte-compiled / optimized / DLL files
+**/__pycache__/
+
+# Environments
+.venv/
+
+# mypy
+.mypy_cache/
+
+# IDE stuff
+.vscode/
+
+# Distribution / packaging
+MANIFEST
+*.egg
+*.egg-info
+
+# Unit test / coverage reports
+.tox/
+.pytest_cache/

@@ -18,6 +18,12 @@ MANIFEST
 build/
 dist/
 
+# Sphinx documentation
+docs/_build/
+docs/reference/
+docs/make.bat
+docs/Makefile
+
 # Unit test / coverage reports
 .tox/
 .pytest_cache/

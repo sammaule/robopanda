@@ -1,9 +1,14 @@
+"""
+robopanda.py
+
+This module contains functions that are useful for working with pandas DataFrames.
+"""
 import re
 
-import pandas as pd
+from pandas import DataFrame
 
 
-def clean_column_names(df: pd.DataFrame) -> pd.DataFrame:
+def clean_column_names(df: DataFrame) -> DataFrame:
     """Clean column names to snake case. This enables the use of dot notation to access columns.
 
     Parameters
